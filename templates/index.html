@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Chess Game</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Local Chess Game</h1>
+    <div id="chessboard"></div>
+    <script src="/static/js/script.js"></script>
+    <script>
+        // Register the Service Worker for offline access
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/sw.js')
+            .then(() => console.log('Service Worker Registered'))
+            .catch(err => console.error('Service Worker Registration failed:', err));
+        }
+    </script>
+</body>
+</html>
